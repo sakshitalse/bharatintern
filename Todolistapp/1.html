@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List App</title>
+  <style>
+    /* Some basic styling for the to-do list */
+    body {
+      font-family: Arial, sans-serif;
+      background-color:bisque;
+      border-radius: 20px;
+    }
+    .todo-container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+   
+  </style>
+</head>
+<body>
+
+<div class="todo-container">
+  <h2>To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList">
+    <!-- Tasks will appear here -->
+  </ul>
+</div>
+
+<script>
+  // Function to add a new task to the list
+  function addTask() {
+    var taskInput = document.getElementById("taskInput");
+    var taskList = document.getElementById("taskList");
+    var taskText = taskInput.value;
+
+    if (taskText.trim() !== "") {
+      var listItem = document.createElement("li");
+      listItem.innerText = taskText;
+      taskList.appendChild(listItem);
+      taskInput.value = "";
+    }
+  }
+</script>
+
+</body>
+</html>
+
